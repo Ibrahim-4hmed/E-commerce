@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+    --main-color: #38c714;
+    --primary-color: #22c55e;
+    --orange-color: #f97316;
+    --p-color: #6b7280;
+    --bg-color: #f6f6f6;
+    --white-color: #fff;
+    --heading-color: #293725;
+    --border-color: #ccc;
+    --red-color: rgba(255, 0, 0, 0.856);
+}
+
+body {
+    font-family: "Inter", "sans-serif";
+    /* padding-top: 150px; */
+}
+img {
+    width: 100%;
+}
+h1,h2,h3,h4,h5,h6 {
+    color: var(--heading-color);
+    font-family: "DM sans","sans-serif";
+}
+p {
+    color: var(--p-color);
+}
+input,button,textarea,select {
+    outline: none;
+    border: none;
+}
+a {
+    text-decoration: none;
+    color: var(--heading-color);
+}
+ li {
+    list-style: none;
+}
+.page {
+    min-height: 100vh;
+    /* background-color: var(--bg-color); */
+}
+.page main {
+    padding-top: 5rem;
+}
+.container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1350px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    border-radius: 0.5rem; 
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em; 
+    transition: all 0.3s ease;
+    outline: none;
+    cursor: pointer;
+    font-size: 1rem;
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    padding: .8rem 1.5rem;
+    color: var(--heading-color);
+    width: fit-content;
+}
+
+/* Toast */
+.toast-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    min-height: 100px;
+    min-width: 300px;
+}
+.toast-img {
+    width: auto;
+    height: 50px;
+    object-fit: cover;
+}
+.toast-content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 14px;
+}
+.toast-wrapper strong {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient:vertical ;
+}
+.toast-content .btn {
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+
+
+
+

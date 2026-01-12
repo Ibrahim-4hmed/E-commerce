@@ -1,0 +1,247 @@
+export interface Product {
+  id: string;
+  name: string;
+  category: 'shoes' | 'shirts' | 'kits' | 'accessories';
+  price: number;
+  originalPrice?: number;
+  image: string;
+  images: string[];
+  description: string;
+  sizes: string[];
+  colors: string[];
+  featured: boolean;
+  rating: number;
+  reviews: number;
+}
+export const products: Product[] = [
+  {
+    id: '1',
+    name: 'Phantom Elite Pro',
+    category: 'shoes',
+    price: 249.99,
+    originalPrice: 299.99,
+    image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=600&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=600&h=600&fit=crop',
+    ],
+    description: 'Experience unmatched speed and control with the Phantom Elite Pro. Engineered with Flyknit technology for a lightweight, sock-like fit that moves with your foot. The precision stud pattern provides optimal traction on firm ground surfaces.',
+    sizes: ['7', '8', '9', '10', '11', '12'],
+    colors: ['Volt', 'Black', 'White'],
+    featured: true,
+    rating: 4.8,
+    reviews: 234,
+  },
+  {
+    id: '2',
+    name: 'Mercurial Vapor XV',
+    category: 'shoes',
+    price: 199.99,
+    image: 'https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&h=600&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=600&fit=crop',
+    ],
+    description: 'Built for explosive speed with an aerodynamic design and responsive cushioning system.',
+    sizes: ['7', '8', '9', '10', '11', '12', '13'],
+    colors: ['Blue', 'Red', 'Black'],
+    featured: true,
+    rating: 4.7,
+    reviews: 189,
+  },
+  {
+    id: '3',
+    name: 'Thunder Strike FG',
+    category: 'shoes',
+    price: 179.99,
+    originalPrice: 219.99,
+    image: 'https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=600&h=600&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=600&h=600&fit=crop',
+    ],
+    description: 'Dominate the pitch with superior ball control and stability features.',
+    sizes: ['8', '9', '10', '11', '12'],
+    colors: ['Orange', 'Black'],
+    featured: false,
+    rating: 4.5,
+    reviews: 156,
+  },
+  {
+    id: '4',
+    name: 'Pro Training Jersey',
+    category: 'shirts',
+    price: 59.99,
+    image: 'https://images.unsplash.com/photo-1580089595767-98745d7025c5?w=600&h=600&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1580089595767-98745d7025c5?w=600&h=600&fit=crop',
+    ],
+    description: 'Lightweight, breathable training jersey with moisture-wicking Dri-FIT technology.',
+    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    colors: ['Green', 'Blue', 'White', 'Black'],
+    featured: true,
+    rating: 4.6,
+    reviews: 312,
+  },
+  {
+    id: '5',
+    name: 'Elite Match Jersey',
+    category: 'shirts',
+    price: 89.99,
+    image: 'https://images.unsplash.com/photo-1551958219-acbc608c6377?w=600&h=600&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1551958219-acbc608c6377?w=600&h=600&fit=crop',
+    ],
+    description: 'Official match-day quality jersey with advanced ventilation zones.',
+    sizes: ['S', 'M', 'L', 'XL'],
+    colors: ['Red', 'Blue', 'Yellow'],
+    featured: false,
+    rating: 4.9,
+    reviews: 89,
+  },
+   {
+    id: '6',
+    name: 'Classic Striped Shirt',
+    category: 'shirts',
+    price: 49.99,
+    image: 'https://images.unsplash.com/photo-1622445275576-721325763afe?w=600&h=600&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1622445275576-721325763afe?w=600&h=600&fit=crop',
+    ],
+    description: 'Timeless striped design with modern comfort features.',
+    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    colors: ['Black/White', 'Red/White', 'Blue/White'],
+    featured: false,
+    rating: 4.4,
+    reviews: 201,
+  },
+   {
+    id: '7',
+    name: 'Complete Home Kit',
+    category: 'kits',
+    price: 149.99,
+    originalPrice: 179.99,
+    image: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600&h=600&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600&h=600&fit=crop',
+    ],
+    description: 'Complete home kit including jersey, shorts, and socks. Match-ready quality.',
+    sizes: ['S', 'M', 'L', 'XL'],
+    colors: ['Home', 'Away'],
+    featured: true,
+    rating: 4.8,
+    reviews: 145,
+  },
+  {
+    id: '8',
+    name: 'Youth Training Kit',
+    category: 'kits',
+    price: 79.99,
+    image: 'https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=600&h=600&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=600&h=600&fit=crop',
+    ],
+    description: 'Durable youth training kit designed for everyday practice sessions.',
+    sizes: ['YS', 'YM', 'YL'],
+    colors: ['Blue', 'Green', 'Red'],
+    featured: false,
+    rating: 4.6,
+    reviews: 178,
+  },
+  {
+    id: '9',
+    name: 'Goalkeeper Kit Pro',
+    category: 'kits',
+    price: 129.99,
+    image: 'https://images.unsplash.com/photo-1614632537423-5e56bb0e625e?w=600&h=600&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1614632537423-5e56bb0e625e?w=600&h=600&fit=crop',
+    ],
+    description: 'Professional goalkeeper kit with padded protection and grip technology.',
+    sizes: ['S', 'M', 'L', 'XL'],
+    colors: ['Neon Yellow', 'Black', 'Orange'],
+    featured: false,
+    rating: 4.7,
+    reviews: 67,
+  },
+  {
+    id: '10',
+    name: 'Pro Match Ball',
+    category: 'accessories',
+    price: 149.99,
+    image: 'https://images.unsplash.com/photo-1614632537423-5e56bb0e625e?w=600&h=600&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1614632537423-5e56bb0e625e?w=600&h=600&fit=crop',
+    ],
+    description: 'FIFA-approved match ball with thermal bonding technology for true flight.',
+    sizes: ['Size 5'],
+    colors: ['White/Black', 'Neon'],
+    featured: true,
+    rating: 4.9,
+    reviews: 423,
+  },
+  {
+    id: '11',
+    name: 'Goalkeeper Gloves Elite',
+    category: 'accessories',
+    price: 89.99,
+    originalPrice: 109.99,
+    image: 'https://images.unsplash.com/photo-1552066344-2464c1135c32?w=600&h=600&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1552066344-2464c1135c32?w=600&h=600&fit=crop',
+    ],
+    description: 'Professional goalkeeper gloves with 4mm German latex palm for superior grip.',
+    sizes: ['7', '8', '9', '10', '11'],
+    colors: ['Black/Volt', 'White/Blue'],
+    featured: false,
+    rating: 4.6,
+    reviews: 198,
+  },
+  {
+    id: '12',
+    name: 'Shin Guards Pro',
+    category: 'accessories',
+    price: 34.99,
+    image: 'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=600&h=600&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=600&h=600&fit=crop',
+    ],
+    description: 'Lightweight yet protective shin guards with anatomical fit and sleeve.',
+    sizes: ['S', 'M', 'L'],
+    colors: ['Black', 'White'],
+    featured: false,
+    rating: 4.5,
+    reviews: 287,
+  },
+];
+
+export const categories = [
+  {
+    id: 'shoes',
+    name: 'Soccer Shoes',
+    description: 'Elite footwear for peak performance',
+    image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&h=600&fit=crop',
+    count: products.filter(p => p.category === 'shoes').length,
+  },
+  {
+    id: 'shirts',
+    name: 'T-Shirts & Jerseys',
+    description: 'Breathable comfort for training and match day',
+    image: 'https://images.unsplash.com/photo-1580089595767-98745d7025c5?w=800&h=600&fit=crop',
+    count: products.filter(p => p.category === 'shirts').length,
+  },
+  {
+    id: 'kits',
+    name: 'Complete Kits',
+    description: 'Full team uniforms and sets',
+    image: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800&h=600&fit=crop',
+    count: products.filter(p => p.category === 'kits').length,
+  },
+  {
+    id: 'accessories',
+    name: 'Accessories',
+    description: 'Essential gear and equipment',
+    image: 'https://images.unsplash.com/photo-1614632537423-5e56bb0e625e?w=800&h=600&fit=crop',
+    count: products.filter(p => p.category === 'accessories').length,
+  },
+];

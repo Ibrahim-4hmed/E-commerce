@@ -1,0 +1,170 @@
+/* About Page */
+.about-page main {
+    padding-top: 5rem;
+}
+.about-page .hero-section {
+  background-color: var(--bg-color);
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 3rem;
+}
+.about-page .hero-content {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.about-page .hero-content h1 {
+  font-size: 4rem;
+  line-height: 2.5rem;
+  text-align: center;
+}
+.about-page .hero-content h1 span {
+  color: var(--main-color);
+}
+.about-page .hero-content p {
+  color: var(--p-color);
+  text-align: center;
+  margin-top: 1rem;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.background-accent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to left, #0000009a, 0.05), transparent;
+}
+
+main {
+  padding-bottom: 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* @media (min-width: 768px) {
+  .about-section {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+} */
+
+.about-page .container-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem; /* gap-12 */
+  align-items: center;
+}
+.about-page .content {
+  margin-top: 2rem;
+}
+.about-page .title {
+  color: var(--main-color);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.875rem;
+}
+.about-page h2 {
+  font-size: 3rem;               
+  margin-top: 0.5rem;               /* mt-2 */
+}
+.about-page h2 span {
+  background-color: var(--main-color);
+  color:var(--white-color);
+}
+.about-page .content .p-text-1 {
+  font-size: 1.125rem; /* text-lg ≈ 18px */
+  color: var(--p-color);       /* text-muted-foreground (Tailwind gray-500) */
+  line-height: 1.75rem; /* leading-relaxed */
+  margin-top: 1rem;     /* mt-4 */
+  line-height: 1.6;
+}
+.about-page .content .p-text-2 {
+  font-size: 1rem; /* text-lg ≈ 18px */
+  color: var(--p-color);       /* text-muted-foreground (Tailwind gray-500) */
+  line-height: 1.75rem; /* leading-relaxed */
+  margin-top: 1.5rem;     /* mt-4 */
+  line-height: 1.6;
+}
+.about-page .stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem; /* gap-6 */
+  padding-top: 1rem; /* pt-4 */
+}
+.about-page .stat-item {
+  border-left: 2px solid var(--main-color);
+  padding-left: 1rem;
+}
+.about-page .value {
+  font-size: 2rem;
+  color: #222;
+  font-weight: 600;
+}
+.about-page .label {
+  font-size: 0.875rem;
+  color: #333; /* text-muted-foreground (Tailwind gray-500) */
+}
+.about-page .features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem; /* gap-6 */
+}
+
+.about-page .feature-card {
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  transition: all 300ms;
+  animation: fade-in 0.5s ease-in-out forwards;
+}
+
+.about-page .feature-card:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0px 5px 20px rgba(56, 199, 20, 0.5);
+  transform: translateY(-0.25rem); /* hover-lift effect */
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about-page .feature-icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.about-page .feature-icon svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--white-color);
+}
+.about-page .feature-title {
+  font-size: 1.25rem;
+  color: var(--color-heading);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+.about-page .desc {
+  font-size: 1rem;
+  color: var(--p-color);
+  line-height: 1.6;
+}
