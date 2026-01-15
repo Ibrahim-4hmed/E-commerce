@@ -8,7 +8,7 @@
 }
 :root {
     --main-color: #38c714;
-    --primary-color: #22c55e;
+    --secondary-color: #22c55e;
     --orange-color: #f97316;
     --p-color: #6b7280;
     --bg-color: #f6f6f6;
@@ -81,7 +81,7 @@ a {
     display: flex;
     align-items: center;
     gap: 20px;
-    min-height: 100px;
+    padding: 1rem;
     min-width: 300px;
 }
 .toast-img {

@@ -2,27 +2,53 @@ import { useState } from 'react';
 import { MdMailOutline } from "react-icons/md";
 import { FiSend,FiMapPin,FiPhone } from "react-icons/fi";
 import toast from "react-hot-toast";
+import type { JSX } from 'react';
 import "./homeSections.css";
 
+type FormData = {
+  name: string 
+  email: string
+  message: string
+}
 
-const ContactSection = () => {
-  const [formData, setFormData] = useState({
+const ContactSection = (): JSX.Element => {
+  const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
     message: '',
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-     toast.success(
-      <div className="toast_wrapper">
-        <h4 className="toast_title">Success!</h4>
-        <p className="toast_message">Your message has been sent successfully.</p> 
+ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+
+  try {
+    const response = await fetch('https://api-endpoint.com/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to send message');
+    }
+
+    toast.success(
+      <div className="toast-wrapper">
+        <h4 className="toast-title">Success!</h4>
+        <p className="toast-message">Your message has been sent successfully.</p>
       </div>,
       { duration: 3500 }
     );
+
     setFormData({ name: '', email: '', message: '' });
-  };
+  } catch (error) {
+    // console.log(error);
+    toast.error('Something went wrong. Please try again.');
+  }
+};
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));

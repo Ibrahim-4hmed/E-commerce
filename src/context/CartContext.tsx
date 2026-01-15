@@ -1,8 +1,8 @@
 import React, { createContext, useContext, type ReactNode } from 'react';
 import { useCart,type CartItem } from '../hooks/useCart';
 import { useFavorites } from '../hooks/useFovarite';
-
 import type { Product } from '../data/products';
+
 
 interface CartContextType {
   // Cart
@@ -18,6 +18,7 @@ interface CartContextType {
   toggleFavorite: (product: Product) => void;
   isFavorite: (productId: string) => boolean;
   clearFavorites: () => void;
+  isInCart: (product: Product) => boolean;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -35,6 +36,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
         updateQuantity: cart.updateQuantity,
         clearCart: cart.clearCart,
         cartTotal: cart.total,
+        isInCart: cart.isInCart,
         cartItemCount: cart.itemCount,
         favorites: favs.favorites,
         toggleFavorite: favs.toggleFavorite,

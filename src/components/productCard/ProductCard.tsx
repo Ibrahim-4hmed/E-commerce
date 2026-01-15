@@ -1,29 +1,41 @@
 import { Link } from 'react-router-dom';
-// import { Heart, ShoppingBag, Star } from 'lucide-react';
 import { FaRegHeart } from "react-icons/fa";
+import { FaCheckCircle } from "react-icons/fa";
 import { RiShoppingBag3Line } from "react-icons/ri";
 import type { Product } from '../../data/products';
 import { FaStar } from "react-icons/fa6";
 import { useCartContext } from '../../context/CartContext';
 import './productCard.css'
+import toast from 'react-hot-toast';
+import type { JSX } from 'react';
 
 
 interface ProductCardProps {
   product: Product;
   className?: string;
 }
+let inCart: boolean ;
 
-const ProductCard = ({ product }: ProductCardProps) => {
+const ProductCard = ({ product }: ProductCardProps):JSX.Element => {
   const { toggleFavorite, isFavorite, addToCart } = useCartContext();
-  const favorite = isFavorite(product.id);
+  const favorite: boolean = isFavorite(product.id);
 
-  const handleQuickAdd = (e: React.MouseEvent) => {
+  const handleQuickAdd = (e: React.MouseEvent):void => {
     e.preventDefault();
     e.stopPropagation();
     addToCart(product, product.sizes[0], product.colors[0]);
+    inCart = true;
+
+    toast.success(
+      <div className="toast-wrapper">
+        <h4 className="toast-title">Success!</h4>
+        <p className="toast-message">Added To Cart</p>
+      </div>,
+      { duration: 3500 }
+    );
   };
 
-  const handleFavorite = (e: React.MouseEvent) => {
+  const handleFavorite = (e: React.MouseEvent):void => {
     e.preventDefault();
     e.stopPropagation();
     toggleFavorite(product);
@@ -49,7 +61,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
             </span>
           )}
           {product.featured && (
-            <span >
+            <span style={{ backgroundColor: "greenred" }}>
               Featured
             </span>
           )}
@@ -66,16 +78,21 @@ const ProductCard = ({ product }: ProductCardProps) => {
         </button>
 
         {/* Quick Add */}
-        <div className="quick-add-btn">
+        <div className="btn-container">
           <button
-            onClick={handleQuickAdd}
-            className="quick-button btn" 
-            // variant="accent"
-          >
-            <RiShoppingBag3Line />
-            Quick Add
-          </button>
+              onClick={handleQuickAdd}
+              className="quick-button btn" 
+            >
+              <RiShoppingBag3Line />
+              Quick Add
+            </button>
         </div>
+
+        {/*Item In Cart*/}
+        {inCart && <div className="inCart-div">
+            <FaCheckCircle />
+            In Cart
+        </div>}
       </div>
 
       {/* Info */}

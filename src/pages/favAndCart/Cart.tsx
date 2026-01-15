@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-// import { , Minus, Plus, , ArrowRight } from 'lucide-react';
 import { FiTrash2, FiArrowRight } from "react-icons/fi";
 import { TiMinus } from "react-icons/ti";
 import { FaPlus } from "react-icons/fa6";
@@ -8,9 +7,11 @@ import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
 import Button  from '../../components/button/Button';
 import { useCartContext } from '../../context/CartContext';
-import "./favorites.css"
+import "./favAndCart.css"
+import type { JSX } from 'react';
+import type { CartItem } from '../../hooks/useCart';
 
-const Cart = () => {
+const Cart = (): JSX.Element => {
   const { cartItems, removeFromCart, updateQuantity, cartTotal, clearCart } = useCartContext();
 
   if (cartItems.length === 0) {
@@ -24,7 +25,7 @@ const Cart = () => {
             Looks like you haven't added any items to your cart yet.
           </p>
           <Link to="/shop">
-            <Button  className={["color"]}>
+            <Button  className={["color", "btn"]}>
               Start Shopping
               <FiArrowRight className="w-4 h-4" />
             </Button>
@@ -53,7 +54,7 @@ const Cart = () => {
           <div className="content">
             {/* Cart Items */}
             <div className="cart-items">
-              {cartItems.map((item) => (
+              {cartItems.map((item: CartItem): JSX.Element => (
                 <div
                   key={`${item.product.id}-${item.size}-${item.color}`}
                   className="item"
@@ -62,7 +63,6 @@ const Cart = () => {
                     <img
                       src={item.product.image}
                       alt={item.product.name}
-                      className=""
                     />
                   </Link>
 
@@ -82,7 +82,7 @@ const Cart = () => {
                     <div className="buttom">
                       <div className="counts">
                         <button
-                          onClick={() =>
+                          onClick={():void =>
                             updateQuantity(item.product.id, item.size, item.color, item.quantity - 1)
                           }
                         >
@@ -90,7 +90,7 @@ const Cart = () => {
                         </button>
                         <span className="quantity">{item.quantity}</span>
                         <button
-                          onClick={() =>
+                          onClick={():void =>
                             updateQuantity(item.product.id, item.size, item.color, item.quantity + 1)
                           }
                         >
@@ -99,7 +99,7 @@ const Cart = () => {
                       </div>
 
                       <button
-                        onClick={() => removeFromCart(item.product.id, item.size, item.color)}
+                        onClick={():void => removeFromCart(item.product.id, item.size, item.color)}
                         className="remove-btn"
                       >
                         <FiTrash2 className="w-5 h-5" />

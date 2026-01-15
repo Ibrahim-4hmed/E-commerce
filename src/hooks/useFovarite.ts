@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 import type { Product } from '../data/products';
 
-const FAVORITES_STORAGE_KEY = 'kickzone-favorites';
+const FAVORITES_STORAGE_KEY:"kickzone-favorites" = 'kickzone-favorites';
 
 export const useFavorites = () => {
   const [favorites, setFavorites] = useState<Product[]>([]);
 
   useEffect(() => {
-    const stored = localStorage.getItem(FAVORITES_STORAGE_KEY);
+    const stored: string | null = localStorage.getItem(FAVORITES_STORAGE_KEY);
     if (stored) {
       try {
         setFavorites(JSON.parse(stored));
@@ -21,18 +21,18 @@ export const useFavorites = () => {
     localStorage.setItem(FAVORITES_STORAGE_KEY, JSON.stringify(favorites));
   }, [favorites]);
 
-  const addToFavorites = (product: Product) => {
+  const addToFavorites = (product: Product):void => {
     setFavorites(prev => {
       if (prev.some(p => p.id === product.id)) return prev;
       return [...prev, product];
     });
   };
 
-  const removeFromFavorites = (productId: string) => {
+  const removeFromFavorites = (productId: string):void => {
     setFavorites(prev => prev.filter(p => p.id !== productId));
   };
 
-  const toggleFavorite = (product: Product) => {
+  const toggleFavorite = (product: Product):void => {
     if (isFavorite(product.id)) {
       removeFromFavorites(product.id);
     } else {
@@ -40,11 +40,11 @@ export const useFavorites = () => {
     }
   };
 
-  const isFavorite = (productId: string) => {
+  const isFavorite = (productId: string): boolean => {
     return favorites.some(p => p.id === productId);
   };
 
-  const clearFavorites = () => {
+  const clearFavorites = ():void => {
     setFavorites([]);
   };
 

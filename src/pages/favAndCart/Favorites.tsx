@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-// import { Heart, ArrowRight } from 'lucide-react';
 import { FaRegHeart } from "react-icons/fa";
 import { LuArrowRight } from "react-icons/lu";
 import Header from '../../components/header/Header';
@@ -7,9 +6,11 @@ import Footer from '../../components/footer/Footer';
 import ProductCard from '../../components/productCard/ProductCard';
 import Button  from '../../components/button/Button';
 import { useCartContext } from '../../context/CartContext';
-import "./favorites.css"
+import "./favAndCart.css"
+import type { JSX } from 'react';
+import type { Product } from '../../data/products';
 
-const Favorites = () => {
+const Favorites = () :JSX.Element => {
   const { favorites, clearFavorites } = useCartContext();
 
   if (favorites.length === 0) {
@@ -23,9 +24,9 @@ const Favorites = () => {
             Start adding products to your favorites to see them here.
           </p>
           <Link to="/shop">
-            <Button  className={["color"]}>
+            <Button  className={["color", "btn"]}>
               Explore Products
-              <LuArrowRight className="w-4 h-4" />
+              <LuArrowRight />
             </Button>
           </Link>
         </main>
@@ -50,7 +51,7 @@ const Favorites = () => {
           </div>
 
           <div className="fav-products">
-            {favorites.map((product) => (
+            {favorites.map((product: Product ) => (
               <div
                 key={product.id}
               >

@@ -1,9 +1,7 @@
 .favorites-page main,
 .cart-page main {
-    margin-top: 4rem;
-    /* pt-20 md:pt-24 */
-    padding-bottom: 4rem;
-    border-bottom: 1px solid var(--border-color);
+    margin-top: 0;
+    padding-top: 7rem;
 }
 .favorites-page .head-section,
 .cart-page .head-section {

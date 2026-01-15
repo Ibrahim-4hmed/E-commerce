@@ -3,13 +3,19 @@ import { useSearchParams } from 'react-router-dom';
 // import { LuSlidersHorizontal } from "react-icons/lu";
 import { IoSearchOutline } from "react-icons/io5";
 import { MdOutlineClear } from "react-icons/md";
-import { products, categories } from '../../data/products';
+import { products, categories, type Product } from '../../data/products';
 import ProductCard from '../../components/productCard/ProductCard';
 import Footer from '../../components/footer/Footer';
 import Header from '../../components/header/Header';
+import { type JSX } from 'react'
 import "./shop.css"
 
-const priceRanges = [
+type PriceRange =  {
+  label : string
+  min: number 
+  max: number
+} 
+const priceRanges: PriceRange[] = [
   { label: 'All Prices', min: 0, max: Infinity },
   { label: 'Under $50', min: 0, max: 50 },
   { label: '$50 - $100', min: 50, max: 100 },
@@ -17,15 +23,15 @@ const priceRanges = [
   { label: 'Over $200', min: 200, max: Infinity },
 ];
 
-const Shop = () => {
+const Shop = (): JSX.Element => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const [searchQuery, setSearchQuery] = useState('');
-  const [showFilters, setShowFilters] = useState(false);
+  const [searchQuery, setSearchQuery] = useState<string>('');
+  const [showFilters, setShowFilters] = useState<boolean>(false);
   
-  const selectedCategory = searchParams.get('category') || 'all';
-  const selectedPriceRange = parseInt(searchParams.get('price') || '0');
+  const selectedCategory: string = searchParams.get('category') || 'all';
+  const selectedPriceRange: number = parseInt(searchParams.get('price') || '0');
 
-  const updateFilter = (key: string, value: string) => {
+  const updateFilter = (key: string, value: string):void => {
     const newParams = new URLSearchParams(searchParams);
     if (value === 'all' || value === '0') {
       newParams.delete(key);
@@ -35,8 +41,8 @@ const Shop = () => {
     setSearchParams(newParams);
   };
 
-  const filteredProducts = useMemo(() => {
-    return products.filter((product) => {
+  const filteredProducts = useMemo<Product[]>(()=> {
+    return products.filter((product:Product ) => {
       // Category filter
       if (selectedCategory !== 'all' && product.category !== selectedCategory) {
         return false;
@@ -62,12 +68,12 @@ const Shop = () => {
     });
   }, [selectedCategory, selectedPriceRange, searchQuery]);
 
-  const clearFilters = () => {
+  const clearFilters = (): void => {
     setSearchParams({});
     setSearchQuery('');
   };
 
-  const hasActiveFilters = selectedCategory !== 'all' || selectedPriceRange !== 0 || searchQuery;
+  const hasActiveFilters : string | true = selectedCategory !== 'all' || selectedPriceRange !== 0 || searchQuery;
 
   return (
     <div className="shop-page page">
@@ -137,7 +143,9 @@ const Shop = () => {
                   >
                     All Categories
                   </button>
-                  {categories.map((category) => (
+                  {categories.map(
+                    (category:{id:string, name: string,description:string,image:string,count:number})
+                    :JSX.Element => (
                     <button
                       key={category.id}
                       onClick={() => updateFilter('category', category.id)}
@@ -158,7 +166,7 @@ const Shop = () => {
               <div className='price-ranges'>
                 <h3>Price Range</h3>
                 <div className="space-y-2">
-                  {priceRanges.map((range, index) => (
+                  {priceRanges.map((range: PriceRange, index:number):JSX.Element => (
                     <button
                       key={range.label}
                       onClick={() => updateFilter('price', index.toString())}
@@ -187,7 +195,7 @@ const Shop = () => {
 
               {filteredProducts.length > 0 ? (
                 <div className="products-content">
-                  {filteredProducts.map((product, index) => (
+                  {filteredProducts.map((product:Product, index:number):JSX.Element => (
                     <div
                       key={product.id}
                       style={{ animationDelay: `${index * 0.05}s` }}

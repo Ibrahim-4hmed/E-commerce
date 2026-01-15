@@ -84,8 +84,24 @@ button.quick-button {
 .img-container .quick-button svg {
   margin-right: 0.5rem;
 }
-
-/* info */
+.img-container .inCart-div {
+  position: absolute;
+  bottom: 1rem;
+  left: .5rem;
+  background-color: var(--main-color);
+  color: var(-white-color);
+  padding: .3rem .5rem;
+  border-radius: .5rem;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+.img-container .inCart-div.in-cart {
+  display: none;
+}
+/*==============
+ info 
+================*/
 .info {
   padding: 0.875rem;
   background-color: #fff;

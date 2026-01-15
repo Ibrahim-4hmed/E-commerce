@@ -3,9 +3,10 @@ import { LuFacebook } from "react-icons/lu";
 import { FiInstagram,FiYoutube,FiMapPin ,FiPhone} from "react-icons/fi";
 import { FaXTwitter } from "react-icons/fa6";
 import { MdOutlineMail } from "react-icons/md";
+import { type JSX } from 'react'
 import "./footer.css"
 
-const Footer = () => {
+const Footer = ():JSX.Element => {
   return (
     <footer >
       <div className="container">
@@ -24,7 +25,7 @@ const Footer = () => {
               Your ultimate destination for premium soccer gear. Elevate your game with the best equipment from top brands worldwide.
             </p>
             <div className="social-icons">
-              {[LuFacebook, FaXTwitter, FiInstagram, FiYoutube].map((Icon, i) => (
+              {[LuFacebook, FaXTwitter, FiInstagram, FiYoutube].map((Icon, i):JSX.Element => (
                 <a
                   key={i}
                   href="#"
@@ -39,7 +40,7 @@ const Footer = () => {
           <div className='links-section'>
             <h4>Quick Links</h4>
             <ul>
-              {['Shop All', 'Soccer Shoes', 'Jerseys & Kits', 'Accessories', 'Sale'].map((item) => (
+              {['Shop All', 'Soccer Shoes', 'Jerseys & Kits', 'Accessories', 'Sale'].map((item: string):JSX.Element => (
                 <li key={item}>
                   <Link
                     to="/shop"
@@ -55,7 +56,7 @@ const Footer = () => {
           <div className='support-section'>
             <h4>Support</h4>
             <ul>
-              {['Contact Us', 'FAQs', 'Shipping Info', 'Returns', 'Size Guide'].map((item) => (
+              {['Contact Us', 'FAQs', 'Shipping Info', 'Returns', 'Size Guide'].map((item: string):JSX.Element => (
                 <li key={item}>
                   <a
                     href="#"
@@ -92,7 +93,7 @@ const Footer = () => {
             © 2024 KickZone. All rights reserved.
           </p>
           <div className="policy-links">
-            {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map((item) => (
+            {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map((item :string):JSX.Element => (
               <a
                 key={item}
                 href="#"

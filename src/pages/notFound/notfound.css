@@ -1,0 +1,31 @@
+.not-found-page {
+    /* flex min-h-screen items-center justify-center bg-muted */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.not-found-page h1 {
+    /* mb-4 text-4xl font-bold */
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.not-found-page p {
+    /* mb-4 text-xl text-muted-foreground */
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: var(--p-color);
+}
+.not-found-page a {
+    /* text-primary underline hover:text-primary/90 */
+    text-decoration: underline;
+    color: var(--main-color);
+}
+.not-found-page a:hover {
+    color: var(--secondary-color);
+}
+
+
+
+

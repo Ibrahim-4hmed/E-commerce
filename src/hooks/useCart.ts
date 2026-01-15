@@ -6,6 +6,7 @@ export interface CartItem {
   quantity: number;
   size: string;
   color: string;
+  id?:string
 }
 
 const CART_STORAGE_KEY = 'kickzone-cart';
@@ -28,7 +29,7 @@ export const useCart = () => {
     localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(items));
   }, [items]);
 
-  const addToCart = (product: Product, size: string, color: string, quantity: number = 1) => {
+  const addToCart = (product: Product, size: string, color: string, quantity: number = 1):void => {
     setItems(prev => {
       const existingIndex = prev.findIndex(
         item => item.product.id === product.id && item.size === size && item.color === color
@@ -44,19 +45,19 @@ export const useCart = () => {
     });
   };
 
-  const removeFromCart = (productId: string, size: string, color: string) => {
+  const removeFromCart = (productId: string, size: string, color: string):void => {
     setItems(prev => prev.filter(
       item => !(item.product.id === productId && item.size === size && item.color === color)
     ));
   };
 
-  const updateQuantity = (productId: string, size: string, color: string, quantity: number) => {
+  const updateQuantity = (productId: string, size: string, color: string, quantity: number):void => {
     if (quantity <= 0) {
       removeFromCart(productId, size, color);
       return;
     }
 
-    setItems(prev => prev.map(item => {
+    setItems(prev => prev.map((item: CartItem):CartItem => {
       if (item.product.id === productId && item.size === size && item.color === color) {
         return { ...item, quantity };
       }
@@ -64,12 +65,17 @@ export const useCart = () => {
     }));
   };
 
-  const clearCart = () => {
+  const clearCart = ():void => {
     setItems([]);
   };
 
-  const total = items.reduce((sum, item) => sum + item.product.price * item.quantity, 0);
-  const itemCount = items.reduce((sum, item) => sum + item.quantity, 0);
+  const isInCart = (product: Product): boolean => {
+    const productId = product.id
+    return items.some(p => p.id === productId);
+  };
+
+  const total:number = items.reduce((sum, item) => sum + item.product.price * item.quantity, 0);
+  const itemCount:number = items.reduce((sum, item) => sum + item.quantity, 0);
 
   return {
     items,
@@ -79,5 +85,6 @@ export const useCart = () => {
     clearCart,
     total,
     itemCount,
+    isInCart,
   };
 };

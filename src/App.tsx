@@ -4,10 +4,10 @@ import { Toaster } from "react-hot-toast";
 import Index from "./pages/home/Index";
 import Shop from "./pages/shop/Shop";
 import ProductDetails from "./pages/productsDetails/ProductDetails";
-import Cart from "./pages/favorites/Cart";
-import Favorites from "./pages/favorites/Favorites";
+import Cart from "./pages/favAndCart/Cart";
+import Favorites from "./pages/favAndCart/Favorites";
 import NotFound from "./pages/notFound/NotFound";
-import AboutSection from "./pages/about/AboutSection";
+import AboutPage from "./pages/about/AboutPage";
 
 
 const App = () => {
@@ -26,7 +26,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/shop" element={<Shop />} />
-          <Route path="/about" element={<AboutSection />} />
+          <Route path="/about" element={<AboutPage />} />
           <Route path="/product/:id" element={<ProductDetails />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/favorites" element={<Favorites />} />
