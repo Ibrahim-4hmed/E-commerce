@@ -13,12 +13,12 @@ interface CartContextType {
   clearCart: () => void;
   cartTotal: number;
   cartItemCount: number;
+
   // Favorites
   favorites: Product[];
   toggleFavorite: (product: Product) => void;
   isFavorite: (productId: string) => boolean;
   clearFavorites: () => void;
-  isInCart: (product: Product) => boolean;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -36,7 +36,6 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
         updateQuantity: cart.updateQuantity,
         clearCart: cart.clearCart,
         cartTotal: cart.total,
-        isInCart: cart.isInCart,
         cartItemCount: cart.itemCount,
         favorites: favs.favorites,
         toggleFavorite: favs.toggleFavorite,

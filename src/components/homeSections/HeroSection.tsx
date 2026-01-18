@@ -12,7 +12,7 @@ const HeroSection = (): JSX.Element => {
         {/* Content */}
         <div className="content">
           <div className="new-season">
-            <GoZap className="" />
+            <GoZap />
             <span >New Season Collection 2026</span>
           </div>
 

@@ -8,24 +8,24 @@ import { useCartContext } from '../../context/CartContext';
 import './productCard.css'
 import toast from 'react-hot-toast';
 import type { JSX } from 'react';
+import type { CartItem } from '../../hooks/useCart';
 
 
 interface ProductCardProps {
   product: Product;
   className?: string;
 }
-let inCart: boolean ;
 
 const ProductCard = ({ product }: ProductCardProps):JSX.Element => {
-  const { toggleFavorite, isFavorite, addToCart } = useCartContext();
+  const { toggleFavorite,isFavorite, addToCart,cartItems } = useCartContext();
   const favorite: boolean = isFavorite(product.id);
+  const isInCart = cartItems.some((i: CartItem) => i.id === product.id);
+  
 
   const handleQuickAdd = (e: React.MouseEvent):void => {
     e.preventDefault();
     e.stopPropagation();
     addToCart(product, product.sizes[0], product.colors[0]);
-    inCart = true;
-
     toast.success(
       <div className="toast-wrapper">
         <h4 className="toast-title">Success!</h4>
@@ -42,10 +42,16 @@ const ProductCard = ({ product }: ProductCardProps):JSX.Element => {
   };
 
   return (
+    <div className={`product-card ${isInCart ? "inCart" : ""}`}>
     <Link 
       to={`/product/${product.id}`}
-      className="product-card"
     >
+      {/* itme stat  */}
+      <span className="item-status">
+          {" "}
+          <FaCheckCircle /> in cart{" "}
+        </span>
+
       {/* Image */}
       <div className="img-container">
         <img
@@ -81,18 +87,13 @@ const ProductCard = ({ product }: ProductCardProps):JSX.Element => {
         <div className="btn-container">
           <button
               onClick={handleQuickAdd}
-              className="quick-button btn" 
+              className={`btn quick-button`}
             >
               <RiShoppingBag3Line />
               Quick Add
             </button>
         </div>
 
-        {/*Item In Cart*/}
-        {inCart && <div className="inCart-div">
-            <FaCheckCircle />
-            In Cart
-        </div>}
       </div>
 
       {/* Info */}
@@ -123,6 +124,7 @@ const ProductCard = ({ product }: ProductCardProps):JSX.Element => {
         </div>
       </div>
     </Link>
+    </div>
   );
 };
 

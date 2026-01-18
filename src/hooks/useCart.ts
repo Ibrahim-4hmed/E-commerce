@@ -69,11 +69,6 @@ export const useCart = () => {
     setItems([]);
   };
 
-  const isInCart = (product: Product): boolean => {
-    const productId = product.id
-    return items.some(p => p.id === productId);
-  };
-
   const total:number = items.reduce((sum, item) => sum + item.product.price * item.quantity, 0);
   const itemCount:number = items.reduce((sum, item) => sum + item.quantity, 0);
 
@@ -85,6 +80,5 @@ export const useCart = () => {
     clearCart,
     total,
     itemCount,
-    isInCart,
   };
 };

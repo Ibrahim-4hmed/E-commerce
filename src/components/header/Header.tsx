@@ -3,6 +3,7 @@ import './header.css'
 import { Link } from 'react-router-dom'
 import { FaRegHeart } from "react-icons/fa";
 import { TiShoppingCart } from "react-icons/ti";
+import { MdMenu } from "react-icons/md";
 import { useCartContext } from '../../context/CartContext';
 import NavLinks from './NavLink'
 
@@ -35,8 +36,13 @@ function Header(): JSX.Element {
             </Link>
           </div>
 
+          {/* mobile */}
+          <div className='menu'>
+            <MdMenu />
+          </div>
           
         </div>
+
       </div>
     </div>
   )

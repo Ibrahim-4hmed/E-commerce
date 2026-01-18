@@ -17,7 +17,7 @@ function NavLink(): JSX.Element {
     { href: '/about', label: 'ABOUT' }, 
   ];
   return (
-    <div className=''>
+    <div className='nav'>
        <nav className="nav-links">
             {navLinks.map((item: NavLinkTypes): JSX.Element => (
                 <li key={item.href} className={location.pathname === item.href ? "active" : ""}>

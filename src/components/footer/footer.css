@@ -158,6 +158,30 @@ footer .footer-bottom {
 }
 
 
+/* Laptop */
+@media (max-width: 1024px) {
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 2rem;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+
+}
+
+
 
 
 

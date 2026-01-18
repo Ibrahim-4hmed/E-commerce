@@ -6,7 +6,6 @@
     border-bottom: 1px solid var(--border-color);
     position: fixed;
     z-index: 1000;
-    /* margin-left: 3.5rem; */
     width: 100%;
     background-color: var(--white-color);
 }
@@ -33,6 +32,11 @@
 .header-container .logo span {
     color: var(--main-color);
 }
+.header-container .menu {
+    display: none;
+    font-size: 2rem;
+}
+
 /* ===================
   Nav Links 
 ====================== */
@@ -84,3 +88,41 @@
     height: 20px;
     border-radius: 100%;
 }
+
+
+
+
+/* Default → Mobile */
+@media (min-width: 640px) {
+  /* tablets */
+    /* .header-container .nav {
+    visibility: hidden;
+  }
+  .header-container .menu {
+    display: block;
+  } */
+}
+
+@media (max-width: 768px) {
+  /* small laptops */
+   /* .header-container .nav {
+    visibility: hidden;
+  }
+  .header-container .menu {
+    display: block;
+  } */
+}
+
+@media (min-width: 1024px) {
+  /* desktops */
+}
+
+@media (min-width: 1280px) {
+  /* large screens */
+}
+
+
+
+
+
+
