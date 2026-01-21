@@ -77,6 +77,36 @@ FAVORITES PAGE
     gap: 2rem;
 }
 
+/* Laptop */
+@media (max-width: 1024px) {
+  .favorites-page .fav-products {
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .favorites-page .fav-products {
+    grid-template-columns: 1fr;
+  }
+  .fav-products .product {
+    margin: 0 auto ;
+  }
+  .favorites-page .clear-btn {
+    font-size: 1.5rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+    .head-section h1.title {
+        font-size: 2rem;
+    }
+.favorites-page .clear-btn {
+    font-size: 1.2rem;
+}
+}
+
 /*=================== 
 CART PAGE
 =====================*/
@@ -250,6 +280,25 @@ CART PAGE
     margin-top: 1rem;
 }
 
+
+/* Laptop */
+@media (max-width: 1024px) {
+  .cart-page main .content {
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .cart-page main .content {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+
+}
 
 
 

@@ -42,10 +42,10 @@ const Favorites = () :JSX.Element => {
       <main>
         <div className="container">
           <div className="head-section">
-            <h1>
+            <h1 className='title'>
               YOUR <span>FAVORITES</span>
             </h1>
-            <button onClick={clearFavorites} className='btn'> 
+            <button onClick={clearFavorites} className='btn clear-btn'> 
               Clear All
             </button>
           </div>
@@ -54,6 +54,7 @@ const Favorites = () :JSX.Element => {
             {favorites.map((product: Product ) => (
               <div
                 key={product.id}
+                className='product'
               >
                 <ProductCard product={product} />
               </div>

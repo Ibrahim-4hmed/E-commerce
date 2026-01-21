@@ -1,0 +1,53 @@
+/*========
+   Menu
+========== */
+.menu {
+    width: 100%;
+    height: fit-content;
+    background: #000;
+    z-index: 500;
+    position: fixed;
+    padding: 2rem;
+    margin-top: 5rem;
+}
+.menu-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2rem;
+}
+.menu-links li {
+    font-size: 2rem;
+    color: var(--color-heading);
+    position: relative;
+    transition: color 0.3s;
+}
+ .menu-links li a {
+    padding-bottom: 5px;
+    border-bottom: 3px solid transparent;
+    transition: border-bottom 0.3s;
+}
+.menu-links li:hover a {
+    color: var(--main-color);
+} 
+ .menu-links li.active  a {
+    color: var(--main-color);
+    border-bottom: 3px solid var(--main-color);
+}
+
+@media (max-width: 640px) {
+    .menu {
+        margin-top: 3.5rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

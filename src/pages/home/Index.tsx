@@ -8,7 +8,7 @@ import Footer from '../../components/footer/Footer'
 function Index() {
   return (
     <div className='page'>
-      {/* <Header /> */}
+      <Header />
       <main>
         <HeroSection />
         <FeaturedProducts />
