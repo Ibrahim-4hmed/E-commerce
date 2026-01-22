@@ -26,7 +26,6 @@ const priceRanges: PriceRange[] = [
 const Shop = (): JSX.Element => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [searchQuery, setSearchQuery] = useState<string>('');
-  const [showFilters, setShowFilters] = useState<boolean>(false);
   
   const selectedCategory: string = searchParams.get('category') || 'all';
   const selectedPriceRange: number = parseInt(searchParams.get('price') || '0');
@@ -115,18 +114,8 @@ const Shop = (): JSX.Element => {
 
           <div className="content-area">
             {/* Sidebar Filters */}
-            <aside className={`aside-filters
-              ${showFilters ? "show-filter" : "hide-filter"}`}
-            >
-              {showFilters && (
-                <div className="aside-header">
-                  <h3 className="font-display text-xl">Filters</h3>
-                  <button onClick={() => setShowFilters(false)}>
-                    <MdOutlineClear className="w-5 h-5" />
-                  </button>
-                </div>
-              )}
-              
+            <aside className={`aside-filters`}
+            > 
               {/* Categories */}
               <div className='categories-area'>
                 <h3>Categories</h3>

@@ -20,7 +20,7 @@
   line-height: 2.5rem;
   text-align: center;
 }
-.about-page .hero-content h1 span {
+.about-page .hero-content h1  span {
   color: var(--main-color);
 }
 .about-page .hero-content p {
@@ -30,6 +30,7 @@
   max-width: 42rem;
   margin-left: auto;
   margin-right: auto;
+  font-size: 1.4rem;
 }
 .background-accent {
   position: absolute;
@@ -46,12 +47,6 @@ main {
   overflow: hidden;
 }
 
-/* @media (min-width: 768px) {
-  .about-section {
-    padding-top: 8rem;
-    padding-bottom: 8rem;
-  }
-} */
 
 .about-page .container-grid {
   display: grid;
@@ -62,33 +57,26 @@ main {
 .about-page .content {
   margin-top: 2rem;
 }
-.about-page .title {
+.about-page .content .title {
   color: var(--main-color);
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-size: 0.875rem;
 }
-.about-page h2 {
+.about-page .content h2 {
   font-size: 3rem;               
   margin-top: 0.5rem;               /* mt-2 */
 }
 .about-page h2 span {
-  background-color: var(--main-color);
-  color:var(--white-color);
+  color:var(--main-color);
 }
-.about-page .content .p-text-1 {
+.about-page .content .p-text-1,
+.about-page .content .p-text-2  {
   font-size: 1.125rem; /* text-lg ≈ 18px */
   color: var(--p-color);       /* text-muted-foreground (Tailwind gray-500) */
   line-height: 1.75rem; /* leading-relaxed */
   margin-top: 1rem;     /* mt-4 */
-  line-height: 1.6;
-}
-.about-page .content .p-text-2 {
-  font-size: 1rem; /* text-lg ≈ 18px */
-  color: var(--p-color);       /* text-muted-foreground (Tailwind gray-500) */
-  line-height: 1.75rem; /* leading-relaxed */
-  margin-top: 1.5rem;     /* mt-4 */
   line-height: 1.6;
 }
 .about-page .stats-grid {
@@ -168,3 +156,51 @@ main {
   color: var(--p-color);
   line-height: 1.6;
 }
+
+
+
+
+/* Laptop */
+@media (max-width: 1024px) {
+  
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .about-page .container-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-page .content .p-text-2 {
+    margin-bottom: 1rem;
+  }
+  .about-page .features-grid {
+    margin-top: 2rem;
+  }
+  .about-page .content .title,
+  .about-page .feature-title {
+    font-size: 1.4rem;
+  }
+  .about-page .content .p-text-1,
+  .about-page .content .p-text-2  {
+    font-size: 1.3rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .about-page .content .p-text-1,
+  .about-page .content .p-text-2,
+  .about-page .hero-content p {
+    font-size: 1.1rem;
+  }
+  .about-page .hero-content h1 {
+    font-size: 3rem;
+  }
+  .about-page .content .title {
+    font-size: 1rem;
+  }
+  .about-page .content h2 {
+    font-size: 2.2rem;
+  }
+}
+

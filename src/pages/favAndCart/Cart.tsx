@@ -46,7 +46,7 @@ const Cart = (): JSX.Element => {
             <h1>
               YOUR <span>CART</span>
             </h1>
-            <button onClick={clearCart} className='btn'> 
+            <button onClick={clearCart} className='btn clear-btn'> 
               Clear Cart
             </button>
           </div>

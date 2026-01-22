@@ -180,31 +180,31 @@ button.quick-button {
     aspect-ratio: 3 / 2;
   }
   .img-container .favorite-btn {
-    width: 5rem;
-    height: 5rem;
+    width: 4rem;
+    height: 4rem;
   }
   .img-container .favorite-btn svg {
-    font-size: 3rem;
+    font-size: 2rem;
   }
   .img-container .badges span {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
   button.quick-button {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   .info .stars-rating span.rating,
   .info .stars-rating svg {
     font-size: 1.5rem;
   }
    .info .product-name {
-    font-size: 2.8rem;
+    font-size: 2rem;
    }
    .info .category,
    .info .price-section .original-price {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
    }
    .info .price-section .price {
-    font-size: 2rem;
+    font-size: 1.5rem;
    }
 }
 
