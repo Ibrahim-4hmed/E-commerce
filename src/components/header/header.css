@@ -98,7 +98,21 @@
 
 /* Laptop */
 @media (max-width: 1024px) {
-  
+  .header-container .nav-links li {
+    font-size: 1.6rem;
+  }
+  .header-container .header-icons {
+        gap: 2rem;
+    }
+    .header-container .header-icons .icon svg {
+        font-size: 3rem;
+    }
+    .header-container .header-icons .icon .count {
+        font-size: 1.2rem;
+        height: 2rem;
+        width: 2rem;
+        line-height: 2rem;
+    }
 }
 
 /* Tablet */
@@ -114,10 +128,7 @@
         display: none;
     }
     .header-container .header-icons {
-        gap: 2rem;
-    }
-    .header-container .header-icons .icon svg {
-        font-size: 3rem;
+        gap: 1.8rem;
     }
     .header-container .header-icons .icon.menu-icon {
         display:flex;
@@ -135,6 +146,12 @@
     }
     .header-container .header-icons .icon svg {
         font-size: 2rem;
+    }
+    .header-container .header-icons .icon .count {
+        font-size: .9rem;
+        height: 1.4rem;
+        width: 1.4rem;
+        line-height: 1.4rem;
     }
 }
 

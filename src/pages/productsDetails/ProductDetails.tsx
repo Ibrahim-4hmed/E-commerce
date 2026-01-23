@@ -32,7 +32,7 @@ const ProductDetails = () => {
 
   if (!product) {
     return (
-      <div className="product-not-found">
+      <div className="product-not-found page">
         <Header />
         <main>
           <div className='container'>
@@ -74,7 +74,7 @@ const ProductDetails = () => {
   // };
 
   return (
-    <div className="product-details min-h-screen bg-background">
+    <div className="product-details page min-h-screen bg-background">
       <Header />
       
       <main>
@@ -168,9 +168,6 @@ const ProductDetails = () => {
               <div>
                 <div className="select-size">
                   <span className="title">Select Size</span>
-                  <a href="#" className="guide">
-                    Size Guide
-                  </a>
                 </div>
                 <div className="sizes">
                   {product.sizes.map((size) => (

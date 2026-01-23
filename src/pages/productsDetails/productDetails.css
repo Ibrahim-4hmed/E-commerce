@@ -18,7 +18,7 @@
 }
 
 .product-details main {
-    padding-top: 2rem;
+    padding-top: 8rem;
 }
 .product-details main .back-btn {
   display: flex;
@@ -29,6 +29,7 @@
   transition: color 300ms;
   background-color: transparent;
   cursor: pointer;
+  margin-bottom: 1rem;
 }
 .product-details main .back-btn:hover {
     color: #222;
@@ -57,6 +58,7 @@
     object-fit: cover;
 }
 .product-details .images .related-imgs {
+    margin-top: 1rem;
     display: flex;
     gap: 1rem;
 }
@@ -147,14 +149,6 @@
     font-size: 1rem;
     color: var(--heading-color);
 }
-.product-details .info .select-size .guide {
-    font-size: .8rem;
-    color: var(--main-color);
-    transition: 300ms;
-}
-.product-details .info .guide:hover {
-    text-decoration: underline;
-}
 .product-details .info .sizes,
 .product-details .info .colors,
 .product-details .quantity-content .icon-container {
@@ -165,12 +159,12 @@
 }
 .product-details .info .sizes button,
 .product-details .info .colors button {
-    min-width: 48px;
+    min-width: 3rem;
     height: 3rem;
     padding: 1rem;
     border-radius: .5rem;
     border: 2px solid var(--border-color);
-    font-weight: 600;
+    font-weight: 500;
     transition: all 300ms;
     background-color: transparent;
     cursor: pointer;
@@ -232,13 +226,12 @@
 .product-details .quantity-content .icon-container span {
     text-align: center;
     width: 3rem;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .product-details .actions {
     display: flex;
     gap: 1rem;
-    /* padding-top: 1rem; */
 }
 .product-details .actions button {
     display: inline-flex;
@@ -263,6 +256,8 @@
      background-color: var(--main-color);
     color: #fff;
     border-color: var(--main-color);
+    display: flex;
+    gap: .5rem;
 }
 .product-details .actions button.add-to-cart:hover {
   box-shadow:  0 0 8px rgba(56, 199, 20, 0.5),
@@ -294,11 +289,134 @@
 .product-details .related-products .products {
     display: grid;
     grid-template-columns: repeat(4,1fr);
-    /* grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 */
     gap: 1.5rem;
 }
 
 
+
+/* Laptop */
+@media (max-width: 1024px) {
+    .product-details .product-section {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .product-details .images .main-img-card {
+    aspect-ratio: 3 / 2;
+  }
+  .product-details main .back-btn {
+    font-size: 1.6rem;
+  }
+  .product-details .rating .stars svg {
+    font-size: 2rem;
+  }
+  .product-details .info .title p {
+    font-size: 1.5rem;
+  }
+  .product-details .info .pricing .price {
+    font-size: 2.2rem;
+  }
+  .product-details .info .pricing .original-price {
+    font-size: 1.9rem;
+  }
+  .product-details .info .desc {
+    font-size: 1.4rem;
+  }
+  .product-details .info .select-size .title,
+    .product-details .info .select-color .title,
+    .product-details .info .quantity .title {
+        font-size: 1.7rem;
+    }
+    .product-details .info .sizes button,
+    .product-details .info .colors button,
+    .product-details .quantity-content .icon-container button {
+        min-width: 4rem;
+        height: 4rem;
+        padding: 1rem;
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+    .product-details .quantity-content .icon-container span {
+        font-size: 2rem;
+    }
+    .product-details .actions .add-to-cart {
+        font-size: 1.6rem;
+    }
+    .product-details .actions .heart-icon svg {
+        font-size: 2rem;
+    }
+    .product-details .related-products .title {
+        font-size: 3rem;
+    }
+    .product-details .related-products .products {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+     .product-details .product-section {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .product-details .images .main-img-card {
+    aspect-ratio: 1 / 1;
+}
+  .product-details .images img {
+    object-fit: cover;
+  }
+  .product-details .related-products .products {
+    grid-template-columns: 1fr;
+  }
+  .product-details .rating .stars svg {
+    font-size: 1.3rem;
+  }
+  .product-details .info .title h1 {
+    font-size: 2rem;
+  }
+  .product-details .info .title p {
+    font-size: .9rem;
+  }
+  .product-details .info .pricing .price {
+    font-size: 1.7rem;
+  }
+  .product-details .info .pricing .original-price {
+    font-size: 1.3rem;
+  }
+  .product-details .info .desc {
+    font-size: 1rem;
+  }
+  .product-details .info .select-size .title,
+    .product-details .info .select-color .title,
+    .product-details .info .quantity .title {
+        font-size: 1.1rem;
+    }
+        .product-details .info .sizes button,
+    .product-details .info .colors button,
+    .product-details .quantity-content .icon-container button {
+        min-width: 3rem;
+        height: 3rem;
+        padding: 1rem;
+        font-size: 1.4rem;
+        line-height: 1.4rem;
+    }
+    .product-details .quantity-content .icon-container span {
+        font-size: 1.5rem;
+    }
+    .product-details .actions .add-to-cart {
+        font-size: 1.2rem;
+    }
+    .product-details .actions .heart-icon svg {
+        font-size: 1.5rem;
+    }
+    .product-details .related-products .title {
+        font-size: 2rem;
+    }
+}
 
 
 
