@@ -1,4 +1,4 @@
-import React, { createContext, useContext, type ReactNode } from 'react';
+import { createContext, useContext, type ReactNode } from 'react';
 import { useCart,type CartItem } from '../hooks/useCart';
 import { useFavorites } from '../hooks/useFovarite';
 import type { Product } from '../data/products';
