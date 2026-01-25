@@ -40,12 +40,15 @@ function Header(): JSX.Element {
               <span className="count">{favorites.length}</span>
             </Link>
           </div>
+
           <div className="icon">
             <Link to="/cart">
               <TiShoppingCart />
               <span className="count">{cartItemCount}</span>
             </Link>
           </div>
+          
+          {/* Menu Icon */}
           <div className="icon menu-icon" onClick={() => handlMenu()}>
             {isMenuOp ? <FiX /> : <MdMenu /> }
           </div>

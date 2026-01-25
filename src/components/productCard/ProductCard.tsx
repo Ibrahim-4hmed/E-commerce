@@ -1,14 +1,13 @@
 import { Link } from 'react-router-dom';
 import { FaRegHeart } from "react-icons/fa";
-import { FaCheckCircle } from "react-icons/fa";
 import { RiShoppingBag3Line } from "react-icons/ri";
 import type { Product } from '../../data/products';
 import { FaStar } from "react-icons/fa6";
 import { useCartContext } from '../../context/CartContext';
 import './productCard.css'
 import toast from 'react-hot-toast';
-import type { JSX } from 'react';
-import type { CartItem } from '../../hooks/useCart';
+import { type JSX } from 'react';
+
 
 
 interface ProductCardProps {
@@ -17,15 +16,15 @@ interface ProductCardProps {
 }
 
 const ProductCard = ({ product }: ProductCardProps):JSX.Element => {
-  const { toggleFavorite,isFavorite, addToCart,cartItems } = useCartContext();
+  const { toggleFavorite,isFavorite, addToCart } = useCartContext();
   const favorite: boolean = isFavorite(product.id);
-  const isInCart = cartItems.some((i: CartItem) => i.id === product.id);
   
 
   const handleQuickAdd = (e: React.MouseEvent):void => {
     e.preventDefault();
     e.stopPropagation();
     addToCart(product, product.sizes[0], product.colors[0]);
+    // setIsInCart(true);
     toast.success(
       <div className="toast-wrapper">
         <h4 className="toast-title">Success!</h4>
@@ -39,19 +38,30 @@ const ProductCard = ({ product }: ProductCardProps):JSX.Element => {
     e.preventDefault();
     e.stopPropagation();
     toggleFavorite(product);
+    if(favorite){
+      toast.error(
+        <div className="toast-wrapper">
+          <h4 className="toast-title">Removed!</h4>
+          <p className="toast-message">Removed From Favorites</p>
+        </div>,
+        { duration: 3500 }
+      );
+    } else {
+     toast.success(
+      <div className="toast-wrapper">
+        <h4 className="toast-title">Success!</h4>
+        <p className="toast-message">Added To Favorites</p>
+      </div>,
+      { duration: 3500 }
+    );
+    }
   };
 
   return (
-    <div className={`product-card ${isInCart ? "inCart" : ""}`}>
+    <div className={`product-card`}>
     <Link 
       to={`/product/${product.id}`}
     >
-      {/* itme stat  */}
-      <span className="item-status">
-          {" "}
-          <FaCheckCircle /> in cart{" "}
-        </span>
-
       {/* Image */}
       <div className="img-container">
         <img
@@ -86,12 +96,12 @@ const ProductCard = ({ product }: ProductCardProps):JSX.Element => {
         {/* Quick Add */}
         <div className="btn-container">
           <button
-              onClick={handleQuickAdd}
-              className={`btn quick-button`}
+            onClick={handleQuickAdd}
+            className={`btn quick-button`}
             >
               <RiShoppingBag3Line />
-              Quick Add
-            </button>
+              Quick Add              
+          </button>
         </div>
 
       </div>

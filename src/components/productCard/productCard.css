@@ -87,22 +87,22 @@ button.quick-button {
 }
 .item-status {
     position: absolute;
-    top: -30px;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 30%;
+    left: -85px;
+    transform: translateY(-50%);
     font-size: 14px;
     transition: .3s;
     display: flex;
     align-items: center;
     gap: 5px;
-    background-color: var(--orange-color);
+    background-color: var(--white-color);
     padding: .3rem;
-    border-radius: .5rem;
+    border-radius: .2rem;
     color: var(--heading-color);
     z-index: 100;
 }
-.product-card.inCart .item-status {
-    top: 10px;
+.product-card.in-cart .item-status {
+    left: 15px;
 }
 .item-status svg {
     fill: rgb(44, 254, 3);

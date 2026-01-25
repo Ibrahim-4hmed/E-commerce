@@ -11,7 +11,7 @@ import Footer from '../../components/footer/Footer';
 import ProductCard from '../../components/productCard/ProductCard';
 import Button  from '../../components/button/Button';
 import { products } from '../../data/products';
-// import { useCartContext } from '@/context/CartContext';
+import { useCartContext } from '../../context/CartContext';
 // import { useToast } from '@/hooks/use-toast';
 import toast from "react-hot-toast";
 import "./productDetails.css"
@@ -20,8 +20,7 @@ import "./productDetails.css"
 const ProductDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  // const { toast } = useToast();
-  // const { addToCart, toggleFavorite, isFavorite } = useCartContext();
+  const { addToCart, toggleFavorite, isFavorite } = useCartContext();
   
   const product = products.find((p) => p.id === id);
   
@@ -48,7 +47,8 @@ const ProductDetails = () => {
     );
   }
 
-  // const favorite = isFavorite(product.id);
+  const favorite = isFavorite(product.id);
+
   const relatedProducts = products.filter(
     (p) => p.category === product.category && p.id !== product.id
   ).slice(0, 4);
@@ -63,15 +63,36 @@ const ProductDetails = () => {
       return;
     }
 
-    // addToCart(product, selectedSize, selectedColor, quantity);
-    // toast.success("Added to cart");
+    addToCart(product, selectedSize, selectedColor, quantity);
+    toast.success(
+      <div className="toast-wrapper">
+        <h4 className="toast-title">Success!</h4>
+        <p className="toast-message">Added To Favorites</p>
+      </div>,
+      { duration: 2500 }
+    );
   };
 
-  // const handleFavorite = () => {
-  //   toggleFavorite(product);
-  //   toast.error("Removed from Favorites")
-  //   toast.success("Added to Favorites")
-  // };
+  const handleFavorite = () => {
+    toggleFavorite(product);
+    if(favorite){
+      toast.error(
+        <div className="toast-wrapper">
+          <h4 className="toast-title">Removed!</h4>
+          <p className="toast-message">Removed From Favorites</p>
+        </div>,
+        { duration: 2500 }
+      );
+    } else {
+     toast.success(
+      <div className="toast-wrapper">
+        <h4 className="toast-title">Success!</h4>
+        <p className="toast-message">Added To Favorites</p>
+      </div>,
+      { duration: 2500 }
+    );
+    }
+  };
 
   return (
     <div className="product-details page min-h-screen bg-background">
@@ -237,10 +258,9 @@ const ProductDetails = () => {
                   Add to Cart
                 </button>
                 <button
-                  // onClick={handleFavorite}
-                  className="heart-icon"
+                  onClick={handleFavorite}
+                   className={`heart-icon ${favorite && "fill-current"}`}
                 >
-                  {/* <IoMdHeartEmpty className={`"w-5 h-5", ${favorite && "fill-current"}`} /> */}
                   <IoMdHeartEmpty />
                 </button>
               </div>

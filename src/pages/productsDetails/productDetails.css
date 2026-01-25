@@ -278,6 +278,12 @@
 .product-details .actions .heart-icon:hover svg {
     fill: var(--white-color);
 }
+.product-details .actions .heart-icon.fill-current {
+    background-color: var(--main-color);
+}
+.product-details .actions .heart-icon.fill-current svg {
+    fill: var(--white-color);
+}
 .product-details .related-products {
     margin-top: 5rem;
 }
