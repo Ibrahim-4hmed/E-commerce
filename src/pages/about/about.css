@@ -209,6 +209,9 @@ main {
 
 /* Mobile */
 @media (max-width: 640px) {
+  .about-page main {
+    padding-top: 4rem;
+  }
   .about-page .features-grid {
     grid-template-columns: 1fr;
     text-align: center;
@@ -235,7 +238,7 @@ main {
     height: 3rem;
   }
   .about-page .feature-title {
-    margin-top: 2rem;
+    margin-top: 1.3rem;
   }
   .about-page .feature-icon svg {
     width: 1.5rem;

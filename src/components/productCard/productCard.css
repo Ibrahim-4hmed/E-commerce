@@ -260,14 +260,14 @@ button.quick-button {
     font-size: 1rem;
   }
    .info .product-name {
-    font-size: 2rem;
+    font-size: 1.5rem;
    }
    .info .category,
    .info .price-section .original-price {
-    font-size: 1rem;
+    font-size: .9rem;
    }
    .info .price-section .price {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
    }
 }
 

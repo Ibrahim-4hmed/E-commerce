@@ -359,6 +359,9 @@
 
 /* Mobile */
 @media (max-width: 640px) {
+    .product-details main {
+    padding-top: 5rem;
+    }
      .product-details .product-section {
     grid-template-columns: 1fr;
     gap: 1rem;
@@ -373,10 +376,10 @@
     grid-template-columns: 1fr;
   }
   .product-details .rating .stars svg {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
   .product-details .info .title h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   .product-details .info .title p {
     font-size: .9rem;
@@ -388,7 +391,7 @@
     font-size: 1.3rem;
   }
   .product-details .info .desc {
-    font-size: 1rem;
+    font-size: .9rem;
   }
   .product-details .info .select-size .title,
     .product-details .info .select-color .title,
@@ -398,20 +401,17 @@
         .product-details .info .sizes button,
     .product-details .info .colors button,
     .product-details .quantity-content .icon-container button {
-        min-width: 3rem;
-        height: 3rem;
-        padding: 1rem;
         font-size: 1.4rem;
-        line-height: 1.4rem;
+        padding: .8rem;
     }
     .product-details .quantity-content .icon-container span {
         font-size: 1.5rem;
     }
     .product-details .actions .add-to-cart {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
     .product-details .actions .heart-icon svg {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
     .product-details .related-products .title {
         font-size: 2rem;

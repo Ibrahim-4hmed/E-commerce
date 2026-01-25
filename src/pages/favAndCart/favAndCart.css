@@ -105,6 +105,9 @@ FAVORITES PAGE
 
 /* Mobile */
 @media (max-width: 640px) {
+    .favorites-page main{
+        padding-top: 5rem;
+    }
     .favorites-page .head-section h1,
     .cart-page .head-section h1{
         font-size: 2rem;
@@ -357,6 +360,9 @@ CART PAGE
 
 /* Mobile */
 @media (max-width: 640px) {
+    .cart-page main {
+        padding-top: 5rem;
+    }
     .cart-page main .container {
         margin-top: 0rem;
     }
