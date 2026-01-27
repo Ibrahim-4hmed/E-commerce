@@ -1,3 +1,6 @@
+.shop-page main {
+    padding-top: 5rem;
+}
 .shop-page .hero-section {
   background-color: var(--bg-color);
   padding-top: 5rem;

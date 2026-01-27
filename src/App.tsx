@@ -8,6 +8,7 @@ import Cart from "./pages/favAndCart/Cart";
 import Favorites from "./pages/favAndCart/Favorites";
 import NotFound from "./pages/notFound/NotFound";
 import AboutPage from "./pages/about/AboutPage";
+import ScrollToTop from "./components/scrollToTop";
 
 
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
           },
         }}
       />
+      <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/shop" element={<Shop />} />
